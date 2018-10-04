@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
-
+# Use oracle for Active Record
+gem 'activerecord-oracle_enhanced-adapter', '~> 5.2.0'
+gem 'ruby-oci8' # only for CRuby users
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.9'
+gem 'rails'
 # Use mysql as the database for Active Record
 gem 'mysql2', '>= 0.3.13', '< 0.5'
 # Use SCSS for stylesheets
