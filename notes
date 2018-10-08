@@ -1,0 +1,28 @@
+[
+    {
+      columns: [
+        {
+          text: "time",
+          type: :time
+        },
+        {
+          text: :country,
+          type: :string
+        },
+        {
+          text: :number,
+          type: :number
+        }
+      ],
+      rows: [
+
+          [1234567,"SE",123],
+          [1234567,"DE",231],
+          [1234567,"US",321]
+
+      ],
+      type: "table"
+    }
+  ]
+
+  {"dtdata"=>Tue, 16 May 2017 10:21:29 UTC +00:00, "cdserial"=>"SX410-251533-0117", "dspool"=>"x410_120tb_2.3tb-ssd_32gb", "dsnodes"=>"1-3", "nmused"=>321983086.592, "nmtot"=>332398592.0, "dsdedup"=>"1.03:1", "dscompress"=>"--", "dstotalreduc"=>"1.03:1", "nmoverh"=>0.49183}
