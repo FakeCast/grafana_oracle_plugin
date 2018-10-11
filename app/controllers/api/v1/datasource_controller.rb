@@ -11,6 +11,7 @@ module Api
 
       def query
         series = params[:targets][0][:target]
+        pool
         render json: pool.to_json
       end
 
@@ -24,9 +25,10 @@ module Api
     #    result.each do | x |
     #      x["dtdata"] = x["dtdata"].to_time.to_i * 1000
     #  end
+
       datapoints = []
       result.each do | x |
-        datapoints << [x["nmused"], (x["dtdata"].to_time.to_i * 1000)]
+        datapoints << [pos1, pos2, pos3]
       end
        output = [
          {
@@ -36,9 +38,18 @@ module Api
          }
        ]
 
-        print output.to_json
+      query = [{
+         :type => "table",
+         :columns => [
+           { :text => "Onwer", :type => "string"},
+           { :text => "Table Name", :type => "string"}
+         ],
+         :rows => [ datapoints ]
+       }]
 
-        return output
+
+
+        return x
       end
     end
   end
