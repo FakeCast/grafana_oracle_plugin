@@ -10,6 +10,8 @@ class Metric
     return parsed_metrics
   end
 
+
+
   # List of available metrics
   def self.metric_list
     metrics = [
@@ -62,7 +64,7 @@ class Metric
         :"CKM00124902213" => {:vendor => "EMC", :location => "Santo André"},
         :"CKM00112600549" => {:vendor => "EMC", :location => "Santo André"},
         :"CKM00134401144" => {:vendor => "EMC", :location => "Santo André"},
-        :"SX-251533-0117" => {:vendor => "EMC", :location => "Santo André"},
+        #{}:"SX-251533-0117" => {:vendor => "EMC", :location => "Santo André"},
         :"CKM00154803864" => {:vendor => "EMC", :location => "Santo André"},
         :"CKM00151901571" => {:vendor => "EMC", :location => "Santo André"},
         :"CK200150400009" => {:vendor => "EMC", :location => "Santo André"},
@@ -73,6 +75,8 @@ class Metric
     }
     datapoints = []
     array_definition[tier.to_sym].select { | storage, data | data[:location] == location }.each do | array, details |
+      print array
+      print 'saijdoqwie'
       array_data = elements.select {|x| x[:cdframe_id] == array.to_s }
       total = array_data.sum {|h| h[:total]} / 1024
       alocado = array_data.sum {|h| h[:alocado]} / 1024

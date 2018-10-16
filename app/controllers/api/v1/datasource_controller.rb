@@ -13,7 +13,7 @@ module Api
 
       def query
         metric_functions = {
-          :array_pool_status => lambda { | tier, location | Metric.array_pool_status(Snelnx998db.all, tier, location) }
+          :array_pool_status => lambda { | tier, location | Metric.array_pool_status(U28db.all, tier, location) }
         }
         selected = params[:targets][0][:target]
         metric = Metric.parse_metric(selected)
@@ -27,7 +27,7 @@ module Api
       private
       # Set the view name
       def set_table_name
-        Snelnx998db.table_name = 'V_GRAFANA_POOLS'
+        U28db.table_name = 'V_GRAFANA_POOLS'
       end
     end
   end
